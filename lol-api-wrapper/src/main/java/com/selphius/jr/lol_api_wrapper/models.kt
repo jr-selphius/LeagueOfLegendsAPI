@@ -39,6 +39,20 @@ data class LeagueItemDTO(val rank: String,
                          val playerOrTeamId: String,
                          val leaguePoints: Int)
 
+data class LeaguePositionDTO(val rank: String,
+                             val queueType: String,
+                             val hotStreak: Boolean,
+                             val miniSeries: MiniSeriesDTO,
+                             val wins: Int,
+                             val veteran: Boolean,
+                             val losses: Int,
+                             val freshBlood: Boolean,
+                             val leagueId: String,
+                             val playerOrTeamName: String,
+                             val leagueName: String,
+                             val tier: String,
+                             val leaguePoints: Int)
+
 data class MiniSeriesDTO(val wins: Int,
                          val losses: Int,
                          val target: Int,
