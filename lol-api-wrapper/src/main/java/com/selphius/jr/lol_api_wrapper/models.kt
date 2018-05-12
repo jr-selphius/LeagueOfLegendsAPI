@@ -58,12 +58,12 @@ data class MiniSeriesDTO(val wins: Int,
                          val target: Int,
                          val progress: String)
 
-data class InfoDTO(val difficulty: Int,
+data class InfoDto(val difficulty: Int,
                    val attack: Int,
                    val deffense: Int,
                    val magic: Int)
 
-data class StatsDTO(val armorperlevel: Double,
+data class StatsDto(val armorperlevel: Double,
                     val hpperlevel: Double,
                     val attackdamage: Double,
                     val mpperlevel: Double,
@@ -84,7 +84,7 @@ data class StatsDTO(val armorperlevel: Double,
                     val hpregen: Double,
                     val critperlevel: Double)
 
-data class ImageDTO(val full: String,
+data class ImageDto(val full: String,
                     val group: String,
                     val sprite: String,
                     val h: Int,
@@ -92,36 +92,36 @@ data class ImageDTO(val full: String,
                     val y: Int,
                     val x: Int)
 
-data class SkinDTO(val num: Int,
+data class SkinDto(val num: Int,
                    val name: String,
                    val id: Int)
 
-data class PassiveDTO(val image: ImageDTO,
+data class PassiveDto(val image: ImageDto,
                       val sanitizedDescription: String,
                       val name: String,
                       val description: String)
 
-data class RecommendedDTO(val map: String,
-                          val blocks: List<BlockDTO>,
+data class RecommendedDto(val map: String,
+                          val blocks: List<BlockDto>,
                           val champion: String,
                           val title: String,
                           val priority: Boolean,
                           val mode: String,
                           val type: String)
 
-data class BlockDTO(val items: List<BlockItemDTO>,
+data class BlockDto(val items: List<BlockItemDto>,
                     val recMath: Boolean,
                     val type: String)
 
-data class BlockItemDTO(val count: Int,
+data class BlockItemDto(val count: Int,
                         val id: Int)
 
-data class ChampionSpellDTO(val cooldownBurn: String,
+data class ChampionSpellDto(val cooldownBurn: String,
                             val resource: String,
-                            val leveltip: LevelTipDTO,
-                            val vars: List<SpellVarsDTO>,
+                            val leveltip: LevelTipDto,
+                            val vars: List<SpellVarsDto>,
                             val costType: String,
-                            val image: ImageDTO,
+                            val image: ImageDto,
                             val sanitizedDescription: String,
                             val sanitizedTooltip: String,
                             val effect: List<List<Double>>,
@@ -129,19 +129,19 @@ data class ChampionSpellDTO(val cooldownBurn: String,
                             val maxrank: Int,
                             val costBurn: String,
                             val rangeBurn: String,
-                            val range: List<Object>,
+                            val range: List<Any>,
                             val cooldown: List<Double>,
                             val cost: List<Int>,
                             val key: String,
                             val description: String,
                             val effectBurn: List<String>,
-                            val altimages: List<ImageDTO>,
+                            val altimages: List<ImageDto>,
                             val name: String)
 
-data class LevelTipDTO(val effects: List<String>,
+data class LevelTipDto(val effects: List<String>,
                        val label: List<String>)
 
-data class SpellVarsDTO(val ranksWith: String,
+data class SpellVarsDto(val ranksWith: String,
                         val dyn: String,
                         val link: String,
                         val coeff: List<Double>,

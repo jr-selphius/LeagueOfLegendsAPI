@@ -121,7 +121,7 @@ interface LeagueService {
 
 
     /**
-     * Get match IDs by tournament code.
+     * Get match IDs by tournament code
      *
      */
     @GET("/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids")
@@ -129,13 +129,11 @@ interface LeagueService {
 
 
     /**
-     * Get match by match ID and tournament code.
+     * Get match by match ID and tournament code
      *
      */
     @GET("/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}")
     fun getMatch(@Path("matchId") matchId: Long,
                  @Path("tournamentCode") tournamentCode: String)
             : Call<MatchDTO>
-
-
 }
