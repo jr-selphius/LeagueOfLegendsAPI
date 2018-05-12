@@ -323,3 +323,63 @@ data class ParticipantTimelineDto(val lane: String,
 data class MasteryDto(val masteryId: Int,
                       val rank: Int)
 
+data class MatchlistDto(val matches: List<MatchReferenceDto>,
+                        val totalGames : Int,
+                        val startIndex : Int,
+                        val endIndex : Int)
+
+
+data class MatchReferenceDto(val lane: String,
+                             val gameId: Long,
+                             val champion: Int,
+                             val platformId: String,
+                             val season: Int,
+                             val queue: Int,
+                             val role: String,
+                             val timestamp: Long)
+
+data class MatchTimelineDto(val frames: List<MatchFrameDto>,
+                            val frameInterval: Long)
+
+data class MatchFrameDto(val timestamp: Long,
+                         val participantFrames: Map<Int,MatchParticipantFrameDto>,
+                         val events: List<MatchEventDto>)
+
+data class MatchParticipantFrameDto(val totalGold: Int,
+                                    val teamScore: Int,
+                                    val participantId: Int,
+                                    val level: Int,
+                                    val currentGold: Int,
+                                    val minionsKilled: Int,
+                                    val dominionScore: Int,
+                                    val position: List<MatchPositionDto>,
+                                    val exp: Int,
+                                    val jungleMinionsKilled: Int)
+
+data class MatchPositionDto(val y: Int,
+                            val x: Int)
+
+
+data class MatchEventDto(val eventType: String,
+                         val towerType: String,
+                         val teamId: Int,
+                         val ascendedType: String,
+                         val killerId: Int,
+                         val levelUpType: String,
+                         val pointCaptured: String,
+                         val assistingParticipantIds: List<Int>,
+                         val wardType: String,
+                         val monsterType: String,
+                         val type: String,
+                         val killSlot: Int,
+                         val victimId: Int,
+                         val timestamp: Long,
+                         val afterId: Int,
+                         val monsterSubType: Int,
+                         val laneType: String,
+                         val itemId: Int,
+                         val participantId: Int,
+                         val buildingType: String,
+                         val creatorId: Int,
+                         val position: MatchPositionDto,
+                         val beforeId: Int)
