@@ -136,4 +136,45 @@ interface LeagueService {
     fun getMatch(@Path("matchId") matchId: Long,
                  @Path("tournamentCode") tournamentCode: String)
             : Call<MatchDTO>
+
+    /**
+     * Get current game information for the given summoner ID
+     *
+     */
+    @GET("/lol/spectator/v3/active-games/by-summoner/{summonerId}")
+    fun getActiveGames(@Path("summonerId") summonerId: Long) : Call<CurrentGameInfo>
+
+
+    /**
+     * Get list of featured games
+     *
+     */
+    @GET("/lol/spectator/v3/featured-games")
+    fun getFeaturedGames() : Call<FeaturedGames>
+
+
+    /**
+     * Get a summoner by account ID
+     *
+     */
+    @GET("/lol/summoner/v3/summoners/by-account/{accountId}")
+    fun getSummonerByAccountId(@Path("accountId") accountId: Long) : Call<SummonerDto>
+
+
+    /**
+     * Get a summoner by summoner name
+     *
+     */
+    @GET("/lol/summoner/v3/summoners/by-name/{summonerName}")
+    fun getSummonerBySummonerName(@Path("summonerName") summonerName: String) : Call<SummonerDto>
+
+
+    /**
+     * Get a summoner by summoner ID
+     *
+     */
+    @GET("/lol/summoner/v3/summoners/{summonerId}")
+    fun getSummonerBySummonerId(@Path("summonerId") summonerId: Long) : Call<SummonerDto>
+
+
 }

@@ -383,3 +383,70 @@ data class MatchEventDto(val eventType: String,
                          val creatorId: Int,
                          val position: MatchPositionDto,
                          val beforeId: Int)
+
+data class CurrentGameInfo(val gameId: Long,
+                           val gameStartTime: Long,
+                           val platformId: String,
+                           val gameMode: String,
+                           val mapId: Long,
+                           val gameType: String,
+                           val bannedChampions: List<BannedChampion>,
+                           val observers: Observer,
+                           val participants: List<CurrentGameParticipant>,
+                           val gameLength: Long,
+                           val gameQueueConfigId: Long)
+
+data class BannedChampion(val pickTurn: Int,
+                          val championId: Long,
+                          val teamId: Long)
+
+data class Observer(val encryptionKey: String)
+
+data class CurrentGameParticipant(val profileIconId: Long,
+                                  val championId: Long,
+                                  val summonerName: String,
+                                  val gameCustomizationObjects: List<GameCustomizationObject>,
+                                  val bot: Boolean,
+                                  val perks: Perks,
+                                  val spell2Id: Long,
+                                  val teamId: Long,
+                                  val spell1Id: Long,
+                                  val summonerId: Long)
+
+data class GameCustomizationObject(val category: String,
+                                   val content: String)
+
+data class Perks(val perkStyle: Long,
+                 val perkIds: List<Long>,
+                 val perkSubStyle: Long)
+
+data class FeaturedGames(val clientRefreshalInterval: Long,
+                         val gameList: List<FeaturedGameInfo>)
+
+data class FeaturedGameInfo(val gameId: Long,
+                            val gameStartTime: Long,
+                            val platformId: String,
+                            val gameMode: String,
+                            val mapId: Long,
+                            val gameType: String,
+                            val bannedChampions: List<BannedChampion>,
+                            val observers: Observer,
+                            val participants: List<Participant>,
+                            val gameLength: Long,
+                            val gameQueueConfigId: Long)
+
+data class Participant(val profileIconId: Long,
+                       val championId: Long,
+                       val summonerName: String,
+                       val bot: Boolean,
+                       val spell2Id: Long,
+                       val teamId: Long,
+                       val spell1Id: Long)
+
+data class SummonerDto(val profileIconId: Int,
+                       val name: String,
+                       val summonerLevel: Long,
+                       val revisionDate: Long,
+                       val id: Long,
+                       val accountId: Long)
+
