@@ -342,7 +342,7 @@ data class MatchTimelineDto(val frames: List<MatchFrameDto>,
                             val frameInterval: Long)
 
 data class MatchFrameDto(val timestamp: Long,
-                         val participantFrames: Map<Int,MatchParticipantFrameDto>,
+                         val participantFrames: Map<Int, MatchParticipantFrameDto>,
                          val events: List<MatchEventDto>)
 
 data class MatchParticipantFrameDto(val totalGold: Int,
