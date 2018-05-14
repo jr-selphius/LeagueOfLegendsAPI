@@ -6,6 +6,8 @@ This is a wrapper of the League of Legends API made in Kotlin. The library is bu
 
 # How to download it
 
+Put this in your top level build.gradle file
+
 ```groovy
 	allprojects {
 		repositories {
@@ -14,6 +16,8 @@ This is a wrapper of the League of Legends API made in Kotlin. The library is bu
 		}
 	}
 ```
+
+And this in your local build.gradle file
 
 ```groovy
 implementation 'com.github.jr-selphius:LeagueOfLegendsAPI:1.0.0'
